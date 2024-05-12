@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function SongInfo({ song }) {
   return (
     <>
@@ -10,5 +12,13 @@ function SongInfo({ song }) {
     </>
   );
 }
+
+SongInfo.propTypes = {
+  song: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    displayName: PropTypes.string.isRequired,
+    artist: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default SongInfo;
