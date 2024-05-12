@@ -46,7 +46,7 @@ function ProgressBar({ isPlaying, song }) {
       </div>
       <audio
         ref={audioRef}
-        src={`/music/${song.name}.mp3`}
+        src={`/react_music-player/music/${song.name}.mp3`}
         onTimeUpdate={updateProgressBar}></audio>
     </>
   );
