@@ -1,16 +1,29 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-function ProgressBar({ isPlaying, song }) {
+function ProgressBar({ isPlaying, setIsPlaying, song }) {
   const progressRef = useRef(null);
   const audioRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   useEffect(() => {
+    progressRef.current.style.width = '0%';
+
+    setCurrentTime(0);
+    setDuration(audioRef.current.duration || 0);
+
     if (isPlaying) {
-      audioRef.current.play();
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.then().catch((error) => {
+          console.error('Playback failed: ', error);
+          setIsPlaying(false);
+        });
+      }
     } else {
       audioRef.current.pause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, song.name]);
 
   function formatTime(time) {
     const minutes = Math.floor(time / 60);
@@ -22,10 +35,11 @@ function ProgressBar({ isPlaying, song }) {
   }
 
   function updateProgressBar() {
-    const { duration, currentTime } = audioRef.current;
-    const progressPercent = (currentTime / duration) * 100;
-
+    const progressPercent =
+      (audioRef.current.currentTime / audioRef.current.duration) * 100;
     progressRef.current.style.width = `${progressPercent}%`;
+    setCurrentTime(audioRef.current.currentTime);
+    setDuration(audioRef.current.duration);
   }
 
   function setProgressBar(e) {

@@ -16,12 +16,16 @@ function App() {
     setCurrentSongIndex((prevIndex) =>
       prevIndex === 0 ? songs.length - 1 : prevIndex - 1
     );
+
+    setIsPlaying(true);
   }
 
   function handleNextSong() {
     setCurrentSongIndex((prevIndex) =>
       prevIndex === songs.length - 1 ? 0 : prevIndex + 1
     );
+
+    setIsPlaying(true);
   }
 
   return (
