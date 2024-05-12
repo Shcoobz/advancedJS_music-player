@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function PlayerControls({ isPlaying, onPlayPause, onPrevSong, onNextSong }) {
   return (
     <div className='player-controls'>
@@ -10,5 +12,12 @@ function PlayerControls({ isPlaying, onPlayPause, onPrevSong, onNextSong }) {
     </div>
   );
 }
+
+PlayerControls.propTypes = {
+  isPlaying: PropTypes.bool.isRequired,
+  onPlayPause: PropTypes.func.isRequired,
+  onPrevSong: PropTypes.func.isRequired,
+  onNextSong: PropTypes.func.isRequired,
+};
 
 export default PlayerControls;
