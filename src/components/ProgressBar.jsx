@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 
 function ProgressBar({ isPlaying, setIsPlaying, song }) {
   const progressRef = useRef(null);
@@ -77,5 +78,13 @@ function ProgressBar({ isPlaying, setIsPlaying, song }) {
     </>
   );
 }
+
+ProgressBar.propTypes = {
+  isPlaying: PropTypes.bool.isRequired,
+  setIsPlaying: PropTypes.func.isRequired,
+  song: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default ProgressBar;
