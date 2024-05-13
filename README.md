@@ -1,6 +1,6 @@
 # react_Music Player: [LIVE DEMO](https://shcoobz.github.io/react_music-player/)
 
-![react_music-player](assets/react-music-player.png)
+![react_music-player](assets/react_music-player.png)
 
 ## Summary
 
