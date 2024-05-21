@@ -1,10 +1,10 @@
-# react_Music Player: [LIVE DEMO](https://shcoobz.github.io/react_music-player/)
+# advancedJS_Music Player: [LIVE DEMO](https://shcoobz.github.io/advancedJS_music-player/)
 
-![react_music-player](assets/react_music-player.png)
+![advancedJS_music-player](assets/advancedJS_music-player.png)
 
 ## Summary
 
-react_Music Player provides a user-friendly interface for playing music tracks. It features a sleek design and intuitive controls, making it easy for users to navigate and enjoy their favorite songs.
+advancedJS_Music Player provides a user-friendly interface for playing music tracks. It features a sleek design and intuitive controls, making it easy for users to navigate and enjoy their favorite songs.
 
 The core functionality includes:
 
@@ -40,6 +40,6 @@ Visualizes the playback progress of the current song, allowing users to track th
 
 ---
 
-_Note: This document provides an overview of react_Music Player. For detailed instructions and more information, please refer to the source code documentation._
+_Note: This document provides an overview of advancedJS_Music Player. For detailed instructions and more information, please refer to the source code documentation._
 
 _This project is a conversion from an earlier version built with vanilla JavaScript and HTML, available [here](https://github.com/Shcoobz/basicJS_music-player/). This conversion integrates React to enhance UI reactivity and maintainability._

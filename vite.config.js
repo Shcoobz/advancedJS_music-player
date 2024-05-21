@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/react_music-player/',
+  base: '/advancedJS_music-player/',
   build: {
     outDir: 'build',
   },
